@@ -39,34 +39,25 @@ public class Steps extends Base_Class {
 	public void user_click_the_login_button() {
 	   elementClick(obj.getHotel_Login().login_btn);
 	}
-	@Then("User Select the Location")
-	public void user_select_the_location() {
-	    elementSelect("index", obj.getHotel_Search().location, "1");
+	@Then("User Select the Location {string}")
+	public void user_select_the_location(String string) {
+	    elementSelect("text", obj.getHotel_Search().location, string);
 	}
-	@Then("User Select the Hotel Type")
-	public void user_select_the_hotel_type() {
-	    elementSelect("value", obj.getHotel_Search().hotel, "Hotel Creek");
+	@Then("User Select the Hotel Type {string}")
+	public void user_select_the_hotel_type(String string) {
+	    elementSelect("value", obj.getHotel_Search().hotel, string);
 	}
-	@Then("User Select The Room Type")
-	public void user_select_the_room_type() {
-	    elementSelect("text", obj.getHotel_Search().roomType, "Standard");
+	@Then("User Select The Room Type {string}")
+	public void user_select_the_room_type(String string) {
+	    elementSelect("text", obj.getHotel_Search().roomType, string);
 	}
-	@Then("User Select The No of Rooms")
-	public void user_select_the_no_of_rooms() {
-	    elementSelect("text", obj.getHotel_Search().roomNos, "1 - One");
+	@Then("User Select The No of Rooms {string}")
+	public void user_select_the_no_of_rooms(String string) {
+	    elementSelect("text", obj.getHotel_Search().roomNos, string);
 	}
-	@Then("User Select the Check In Date")
-	public void user_select_the_check_in_date() {
-	    elementSendKeys(obj.getHotel_Search().Indate, "24/03/2023");
-	}
-	@Then("User Select the Check Out Date")
-	public void user_select_the_check_out_date() {
-	   elementSendKeys(obj.getHotel_Search().outdate, "22/03/2023");
-	}
-	@Then("User Select the Adult Room")
-	public void user_select_the_adult_room() {
-	   elementSelect("text",obj.getHotel_Search().adult_room, "1 - One");
-	}
+	
+	
+	
 	
 	@Then("User Click on The Submit Button")
 	public void user_click_on_the_submit_button() {
@@ -78,17 +69,17 @@ public class Steps extends Base_Class {
 	  Assert.assertTrue(elementIsDisplayed(obj.getHotel_Search().error_msg));
 	}
 	
-	@Then("user Select the  In Date")
-	public void user_select_the_in_date() {
-	    elementSendKeys(obj.getHotel_Search().Indate, "17/03/2023");
+	@Then("User Select the Check In Date {string}")
+	public void user_select_the_check_in_date(String string) {
+	    elementSendKeys(obj.getHotel_Search().Indate, string);
 	}
-	@Then("user Select the  Out Date")
-	public void user_select_the_out_date() {
-	    elementSendKeys(obj.getHotel_Search().outdate, "19/03/2023");
+	@Then("User Select the Check Out Date {string}")
+	public void user_select_the_check_out_date(String string) {
+	    elementSendKeys(obj.getHotel_Search().outdate, string);
 	}
-	@Then("user Select the  Room Adult")
-	public void user_select_the_room_adult() {
-	   elementSelect("value", obj.getHotel_Search().adult_room, "1");
+	@Then("User Select the Adult Room {string}")
+	public void user_select_the_adult_room(String string) {
+	   elementSelect("value", obj.getHotel_Search().adult_room, string);
 	  
 	   }
 	
@@ -103,7 +94,18 @@ public class Steps extends Base_Class {
 	Assert.assertEquals(string, getAttribute(obj.getHotel_Search().Location_Equal, "value"));	
 		
 	}
+	@Then("User verify the Inn date displayed in search hotel is same as entered {string}")
+	public void user_verify_the_inn_date_displayed_in_search_hotel_is_same_as_entered(String string) {
+	   Assert.assertEquals(string, getAttribute(obj.getHotel_Search().Inndate, "value"));
+	}
+	@Then("User Verify The Room Type Displayed should be same as selected in Search Hotel page {string}")
+	public void user_verify_the_room_type_displayed_should_be_same_as_selected_in_search_hotel_page(String string) {
+	    Assert.assertEquals(string,getAttribute(obj.getHotel_Search().RoomTypeEq, "value"));
+	}
 
+	
+	
+	
 	
 	
 	}

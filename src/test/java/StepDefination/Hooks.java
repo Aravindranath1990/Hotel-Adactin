@@ -12,8 +12,8 @@ public class Hooks extends Base_Class{
 	private void afterHooks(Scenario scenario) {
 	TakesScreenshot	ts = (TakesScreenshot)driver;
 	byte[] screenshotAs = ts.getScreenshotAs(OutputType.BYTES);
-	scenario.attach(screenshotAs, "image/png", "");
-
+	scenario.attach(screenshotAs, "image/png", "hotel");
+driver.quit();
 	}
-
+    
 }

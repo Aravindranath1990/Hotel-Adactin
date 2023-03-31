@@ -49,6 +49,9 @@ public WebElement error_msg;
 @FindBy(id = "location_0" )
 public WebElement Location_Equal;
 
-public String elmtLocation = new StringBuilder().append("(//input[contains(@value,'").append("<REPLACEMENT>").
-append("')])[1]").toString();
+@FindBy(id = "arr_date_0")
+public WebElement Inndate;
+
+@FindBy(id = "room_type_0")
+public WebElement RoomTypeEq;
 }
